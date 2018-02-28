@@ -1,0 +1,279 @@
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Source Sans Pro", Arial, SansSerif;
+    margin: 0;
+    overflow: hidden;
+    background-color: #cecece;
+}
+
+/*Spotlight reveal*/
+@keyframes rotatetext {
+    0% {transform: rotate(0deg); opacity: 1;}
+    80%{transform: rotate(288deg); opacity: 1;}
+    100%{transform: rotate(360deg); opacity: 0}
+}
+
+@keyframes rotatepinktext {
+    0% {transform: rotate(0deg); opacity: 1;}
+    100%{transform: rotate(360deg); opacity: 1}
+}
+
+.whitecircle {
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 100;
+    width:210px;
+    height: 210px;
+    margin-left: -105px;
+    margin-top: -105px;
+    animation: rotatetext both linear 5.4s;
+    transform-origin: 50% 50%;
+}
+
+.pinkcircle {
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 2;
+    width:210px;
+    height: 210px;
+    margin-left: -105px;
+    margin-top: -105px;
+    animation: rotatepinktext infinite linear 7s;
+    animation-delay: .2s;
+    transform-origin: 50% 50%;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+}
+
+#b{
+    width:2000px;
+    height:2000px;
+    position:relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -1000px;
+    margin-top: -1000px;
+}
+
+#b:before{
+    content:'';
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    border-radius:100%;
+    box-shadow: 0px 0px 0px 973px blue;
+    animation: grow 3s forwards;
+    animation-delay: 5s;
+}
+
+@keyframes grow {
+    0% { width: 1px; height: 1px; left: 50%; top: 50%; box-shadow: 0px 0px 0px 973px blue; }
+    100% { width: 2000px; height: 2000px; left: 0%; top: 0%; box-shadow: 0px 0px 0px 0px blue; }
+}
+/*Spotlight reveal ends*/
+
+/*Blue Circles*/
+.circle {
+    width: 250px;
+    height: 250px;
+    background:
+            radial-gradient(circle at 60% 0,
+            rgba(0,30,230,.9),
+            rgba(0,110,255,.5) 70%),
+            radial-gradient(circle at 6.7% 75%,
+            rgba(0,0,255,1),
+            rgba(0,20,255,1) 90%),
+            radial-gradient(circle at 93.3% 75%,
+            rgba(0,0,255,1),
+            rgba(0,130,255,1) 85%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@keyframes revrotate {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);}
+}
+
+@keyframes movecircle {
+    0% {top: 75px; left: 150px; opacity: 1}
+    99% {top:475px; left: -18px; opacity: 1}
+    100% {top:475px; left: -18px; opacity: 0}
+}
+
+#topleft {
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    animation: movecircle 3s forwards;
+    animation-delay: 7s;
+
+}
+
+#bottomleft {
+    position: absolute;
+    top: 475px;
+    left: -20px;
+    animation: revrotate 5s infinite linear;
+    transform-origin: 50.25% 50.5%;
+}
+
+#bottomcenter {
+    position: absolute;
+    bottom: -175px;
+    left: 500px;
+    animation: rotate 4s infinite linear;
+    transform-origin: 50.25% 50.5%;
+}
+
+#center {
+    margin: 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#topright {
+    position: absolute;
+    right: -35px;
+    top:-100px;
+    animation: rotate 5s infinite linear;
+    transform-origin: 50.25% 50.5%;
+}
+
+#bottomright {
+    position: absolute;
+    top: 525px;
+    right: 100px;
+    animation: revrotate 4s infinite linear;
+    transform-origin: 50.25% 50.5%;
+
+}
+/*Blue Circles End*/
+
+/*Text Styles*/
+.textcontainer {
+    width: 375px;
+    padding: 0px 0px 5px 0px;
+    position: absolute;
+    left: 435px;
+    top: 75px;
+    z-index: 2;
+}
+
+#stretch {
+    width: 375px;
+    height: 325px;
+    border: solid blue 3px;
+    position: absolute;
+    left:435px;
+    top:75px;
+    z-index: 1;
+    animation: stretch 4s both;
+    animation-delay: 7s;
+    transform-origin: 50% 50%;
+
+}
+
+@keyframes stretch{
+
+    0% {height: 0px; top: 1000px; opacity: 0;}
+    25% {height: 0px; top: 1000px; opacity: 1; }
+    62% {height: 1000px; top: 80px; opacity: 1;}
+    80% {height: 1000px; top: 80px; opacity: 1;}
+    100% {height: 315px; top: 80px; opacity: 1;}
+
+}
+
+p {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: blue;
+    margin: 25px 20px 15px 20px;
+}
+
+h1 {
+    font-family: "EB Garamond", "Times New Roman", Serif;
+    font-weight: 500;
+    font-size: 100px;
+    color: #fbfe56;
+    text-transform: uppercase;
+    position: absolute;
+    top: 25px;
+    left: 80px;
+    line-height: 1.1;
+
+}
+
+@keyframes movetext {
+    from {top:90px; left:190px;}
+    to {top:495px; left: 20px;}
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 50px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: white;
+    z-index: 3;
+    position: absolute;
+    top:120px;
+    left:0px;
+    animation: movetext 3s both;
+    animation-delay: 7s;
+}
+
+h3 {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fbfe56;
+    font-size: 35px;
+    font-weight: 500;
+    font-family: "EB Garamond", "Times New Roman", Serif;
+    z-index: 3
+}
+
+@keyframes move1 {
+    0% {right: (700px);}
+    100%{right: (0px);}
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#line1 {
+    position: absolute;
+    left:800px;
+    bottom: 150px;
+    animation: 6s ease-in-out both slidein;
+    animation-delay: 7.5s;
+}
+/*Text Styles Ends*/
